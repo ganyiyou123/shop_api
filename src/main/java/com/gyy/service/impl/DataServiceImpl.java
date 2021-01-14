@@ -29,6 +29,7 @@ public class DataServiceImpl implements DataService {
 
     @Override
     public void addDatas(Data data) {
+        data.setCreateDate(new Date());
         dao.addDatas( data);
     }
 
