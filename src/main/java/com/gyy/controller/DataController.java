@@ -44,9 +44,12 @@ public class DataController {
      * 请求参数为：data对象
      * 返回值为：{"code":200,"message":"提示",data:null}
      * */
-    /*@PostMapping("addDatas")
+    @PostMapping("addDatas")
     public  ReponseData addDatas(Data data){
         ds.addDatas(data);
         return ReponseData.success(null);
-    }*/
+    }
+
+
+
 }

@@ -8,5 +8,5 @@ import java.util.Map;
 public interface DataService {
     Map queryDatas(PinpaiParams params);
 
-    /*void addDatas(Data data);*/
+    void addDatas(Data data);
 }

@@ -26,8 +26,8 @@ public class DataServiceImpl implements DataService {
         return map;
     }
 
-    /*@Override
+    @Override
     public void addDatas(Data data) {
         dao.addDatas( data);
-    }*/
+    }
 }
