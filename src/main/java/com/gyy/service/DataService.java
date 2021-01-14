@@ -9,4 +9,6 @@ public interface DataService {
     Map queryDatas(PinpaiParams params);
 
     void addDatas(Data data);
+
+    Data upShowData(Integer id);
 }

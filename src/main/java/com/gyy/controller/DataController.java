@@ -50,6 +50,16 @@ public class DataController {
         return ReponseData.success(null);
     }
 
-
-
+    /*
+     * 查询回显
+     * 路径为：api/data/upShowData
+     * 请求方式为：get
+     * 请求参数为：id
+     * 返回值为：{"code":200,"message":"提示",data对象}
+     * */
+    @GetMapping("upShowData")
+    public ReponseData upShowData(Integer id){
+        Data da=ds.upShowData( id);
+        return ReponseData.success(da);
+    }
 }

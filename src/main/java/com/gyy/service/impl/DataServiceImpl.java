@@ -30,4 +30,9 @@ public class DataServiceImpl implements DataService {
     public void addDatas(Data data) {
         dao.addDatas( data);
     }
+
+    @Override
+    public Data upShowData(Integer id) {
+        return dao.upShowData( id);
+    }
 }
