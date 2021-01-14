@@ -42,4 +42,9 @@ public class DataServiceImpl implements DataService {
         data.setUpdateDate(new Date());
         dao.updateDatas(data);
     }
+
+    @Override
+    public void dleDatasByid(Integer id) {
+        dao.dleDatasByid(id);
+    }
 }

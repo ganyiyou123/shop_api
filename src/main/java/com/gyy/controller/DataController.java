@@ -4,10 +4,7 @@ import com.gyy.entity.po.Data;
 import com.gyy.entity.vo.PinpaiParams;
 import com.gyy.entity.vo.ReponseData;
 import com.gyy.service.DataService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.Map;
@@ -75,4 +72,18 @@ public class DataController {
         ds.updateDatas(data);
         return ReponseData.success(null);
     }
+
+    /*
+     * 删除
+     * 路径为：api/data/dleDatasByid
+     * 请求方式为：delete
+     * 请求参数为：id
+     * 返回值为：{"code":200,"message":"提示",data：null}
+     * */
+    @DeleteMapping("dleDatasByid")
+    public  ReponseData dleDatasByid(Integer id){
+        ds.dleDatasByid(id);
+        return ReponseData.success(null);
+    }
+
 }

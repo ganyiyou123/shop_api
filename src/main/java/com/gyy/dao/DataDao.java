@@ -2,6 +2,7 @@ package com.gyy.dao;
 
 import com.gyy.entity.po.Data;
 import com.gyy.entity.vo.PinpaiParams;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
@@ -24,4 +25,7 @@ public interface DataDao {
     @Update("update shop_data set name=#{name},nameCH=#{nameCH},typeId=#{typeId},type=#{type},isSku=#{isSku},isDel=#{isDel},updateDate=#{updateDate},createPeople=#{createPeople} " +
             "where id=#{id}")
     void updateDatas(Data data);
+
+    @Update("update shop_data set isDel=2 where id=#{id}")
+    void dleDatasByid(Integer id);
 }
