@@ -11,4 +11,6 @@ public interface DataService {
     void addDatas(Data data);
 
     Data upShowData(Integer id);
+
+    void updateDatas(Data data);
 }

@@ -7,6 +7,7 @@ import com.gyy.service.DataService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -34,5 +35,11 @@ public class DataServiceImpl implements DataService {
     @Override
     public Data upShowData(Integer id) {
         return dao.upShowData( id);
+    }
+
+    @Override
+    public void updateDatas(Data data) {
+        data.setUpdateDate(new Date());
+        dao.updateDatas(data);
     }
 }

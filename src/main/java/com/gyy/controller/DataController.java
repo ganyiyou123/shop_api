@@ -62,4 +62,17 @@ public class DataController {
         Data da=ds.upShowData( id);
         return ReponseData.success(da);
     }
+
+    /*
+     * 修改
+     * 路径为：api/data/updateDatas
+     * 请求方式为：post
+     * 请求参数为：data对象
+     * 返回值为：{"code":200,"message":"提示",data：null}
+     * */
+    @PostMapping("updateDatas")
+    public  ReponseData updateDatas(Data data){
+        ds.updateDatas(data);
+        return ReponseData.success(null);
+    }
 }

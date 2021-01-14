@@ -8,7 +8,7 @@ import java.util.Date;
 public class Data {
 
     private Integer id;
-    private String namne;
+    private String name;
     private String nameCH;
     private Integer typeId;
     private Integer type;// 属性的类型    1 单选框      2  复选框   3  输入框  4 下拉框
@@ -30,12 +30,12 @@ public class Data {
         this.id = id;
     }
 
-    public String getNamne() {
-        return namne;
+    public String getName() {
+        return name;
     }
 
-    public void setNamne(String namne) {
-        this.namne = namne;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getNameCH() {
