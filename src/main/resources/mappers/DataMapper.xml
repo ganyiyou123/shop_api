@@ -3,10 +3,10 @@
         "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.gyy.dao.PinpaiDao">
+<mapper namespace="com.gyy.dao.DataDao">
 
-    <select id="queryCount" parameterType="com.gyy.entity.vo.PinpaiParams" resultType="java.lang.Integer">
-      select count(*) from shop_pinpai where isDel=1
+    <select id="queryCounts" parameterType="com.gyy.entity.vo.PinpaiParams" resultType="java.lang.Integer">
+      select count(*) from shop_data where isDel=1
 
       <if test="name!=null and name!=''">
           and name like "%"#{name}"%"
@@ -14,8 +14,8 @@
 
     </select>
 
-    <select id="queryDatas" parameterType="com.gyy.entity.vo.PinpaiParams" resultType="com.gyy.entity.po.Pinpai">
-        select * from shop_pinpai where isDel=1
+    <select id="queryDatas" parameterType="com.gyy.entity.vo.PinpaiParams" resultType="com.gyy.entity.po.Data">
+        select * from shop_data where isDel=1
         <if test="name!=null and name!=''">
             and name like "%"#{name}"%"
         </if>
