@@ -22,7 +22,7 @@ public interface DataDao {
     @Select("select * from shop_data where id=#{id}")
     Data upShowData(Integer id);
 
-    @Update("update shop_data set name=#{name},nameCH=#{nameCH},typeId=#{typeId},type=#{type},isSku=#{isSku},isDel=#{isDel},updateDate=#{updateDate},createPeople=#{createPeople} " +
+    @Update("update shop_data set name=#{name},nameCH=#{nameCH},typeId=#{typeId},type=#{type},isSku=#{isSku},updateDate=#{updateDate},createPeople=#{createPeople} " +
             "where id=#{id}")
     void updateDatas(Data data);
 
