@@ -19,7 +19,7 @@
         <if test="name!=null and name!=''">
             and name like "%"#{name}"%"
         </if>
-        order by ord desc
+
         limit ${size*(currPage-1)},#{size}
 
     </select>

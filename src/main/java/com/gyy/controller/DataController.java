@@ -11,6 +11,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("api/data/")
+@CrossOrigin
 public class DataController {
     @Resource
     private DataService ds;
