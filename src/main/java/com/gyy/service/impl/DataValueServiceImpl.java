@@ -27,4 +27,9 @@ public class DataValueServiceImpl implements DataValueService {
     public DataValue upShowvalueData(Integer id) {
         return dao.upShowvalueData( id);
     }
+
+    @Override
+    public void upvalueData(DataValue da) {
+        dao.upvalueData( da);
+    }
 }

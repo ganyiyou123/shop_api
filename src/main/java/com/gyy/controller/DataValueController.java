@@ -46,12 +46,25 @@ public class DataValueController {
     路径：  http://192.168.1.101:8080/api/datavalue/upShowvalueData
     请求：get请求
     参数：id
-    返回值：   null
+    返回值：   DataValue对象
     */
     @GetMapping("upShowvalueData")
     public  ReponseData upShowvalueData(Integer id){
         DataValue dd=ds.upShowvalueData( id);
         return ReponseData.success(dd);
+    }
+
+    /*
+    作用：修改
+    路径：  http://192.168.1.101:8080/api/datavalue/upvalueData
+    请求：post请求
+    参数：DataValue对象
+    返回值：   null
+    */
+    @PostMapping("upvalueData")
+    public  ReponseData upvalueData(DataValue da){
+        ds.upvalueData( da);
+        return ReponseData.success(null);
     }
 
 }

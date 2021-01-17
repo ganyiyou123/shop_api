@@ -10,4 +10,6 @@ public interface DataValueService {
     void addvalueData(DataValue dd);
 
     DataValue upShowvalueData(Integer id);
+
+    void upvalueData(DataValue da);
 }
