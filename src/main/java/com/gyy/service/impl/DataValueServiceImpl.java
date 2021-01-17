@@ -17,4 +17,9 @@ public class DataValueServiceImpl implements DataValueService {
     public List<DataValue> getvalueData() {
         return dao.getvalueData();
     }
+
+    @Override
+    public void addvalueData(DataValue dd) {
+        dao.addvalueData(dd);
+    }
 }

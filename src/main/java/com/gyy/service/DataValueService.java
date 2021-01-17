@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface DataValueService {
     List<DataValue> getvalueData();
+
+    void addvalueData(DataValue dd);
 }

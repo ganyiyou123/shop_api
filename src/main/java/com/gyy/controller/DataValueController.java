@@ -3,10 +3,7 @@ package com.gyy.controller;
 import com.gyy.entity.po.DataValue;
 import com.gyy.entity.vo.ReponseData;
 import com.gyy.service.DataValueService;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -29,6 +26,19 @@ public class DataValueController {
     public ReponseData getvalueData(){
         List<DataValue> dlist= ds.getvalueData();
         return  ReponseData.success(dlist);
+    }
+
+    /*
+    作用：新增属性值数据
+    路径：  http://192.168.1.101:8080/api/datavalue/addvalueData
+    请求：post请求
+    参数：
+    返回值：   null
+    */
+    @PostMapping("addvalueData")
+    public ReponseData addvalueData(DataValue dd){
+        ds.addvalueData(dd);
+        return ReponseData.success(null);
     }
 
 }
