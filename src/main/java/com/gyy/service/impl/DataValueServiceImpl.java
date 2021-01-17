@@ -22,4 +22,9 @@ public class DataValueServiceImpl implements DataValueService {
     public void addvalueData(DataValue dd) {
         dao.addvalueData(dd);
     }
+
+    @Override
+    public DataValue upShowvalueData(Integer id) {
+        return dao.upShowvalueData( id);
+    }
 }

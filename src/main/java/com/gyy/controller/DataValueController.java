@@ -32,13 +32,26 @@ public class DataValueController {
     作用：新增属性值数据
     路径：  http://192.168.1.101:8080/api/datavalue/addvalueData
     请求：post请求
-    参数：
+    参数：DataValue对象
     返回值：   null
     */
     @PostMapping("addvalueData")
     public ReponseData addvalueData(DataValue dd){
         ds.addvalueData(dd);
         return ReponseData.success(null);
+    }
+
+    /*
+    作用：修改回显
+    路径：  http://192.168.1.101:8080/api/datavalue/upShowvalueData
+    请求：get请求
+    参数：id
+    返回值：   null
+    */
+    @GetMapping("upShowvalueData")
+    public  ReponseData upShowvalueData(Integer id){
+        DataValue dd=ds.upShowvalueData( id);
+        return ReponseData.success(dd);
     }
 
 }

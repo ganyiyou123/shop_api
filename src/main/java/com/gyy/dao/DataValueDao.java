@@ -12,4 +12,7 @@ public interface DataValueDao {
 
     @Insert("insert into shop_datavalue (name,nameCH,dataId) value (#{name},#{nameCH},#{dataId})")
     void addvalueData(DataValue dd);
+
+    @Select("select * from shop_datavalue where id=#{id} ")
+    DataValue upShowvalueData(Integer id);
 }
