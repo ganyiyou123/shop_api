@@ -20,6 +20,7 @@ public class DataValueServiceImpl implements DataValueService {
 
     @Override
     public void addvalueData(DataValue dd) {
+        dd.setIsDel(1);
         dao.addvalueData(dd);
     }
 

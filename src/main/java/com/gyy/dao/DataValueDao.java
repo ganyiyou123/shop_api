@@ -9,10 +9,10 @@ import org.apache.ibatis.annotations.Update;
 import java.util.List;
 
 public interface DataValueDao {
-    @Select("select a.nameCH,d.nameCH from  shop_datavalue a LEFT JOIN shop_data d  ON a.dataId=d.id")
+    @Select("select a.nameCH,d.nameCH from  shop_datavalue a LEFT JOIN shop_data d  ON a.dataId=d.id where isDel=1" )
     List<DataValue> getvalueData();
 
-    @Insert("insert into shop_datavalue (name,nameCH,dataId) value (#{name},#{nameCH},#{dataId})")
+    @Insert("insert into shop_datavalue (name,nameCH,dataId,isDel) value (#{name},#{nameCH},#{dataId},#{isDel})")
     void addvalueData(DataValue dd);
 
     @Select("select * from shop_datavalue where id=#{id} ")
@@ -22,6 +22,6 @@ public interface DataValueDao {
     void upvalueData(DataValue da);
 
 
-    @Delete("delete from shop_datavalue where id=#{id}")
+    @Update("update shop_datavalue set isDel=2 where id=#{id}")
     void delvalueData(Integer id);
 }
