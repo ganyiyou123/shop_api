@@ -5,7 +5,7 @@ import com.gyy.entity.po.DataValue;
 import java.util.List;
 
 public interface DataValueService {
-    List<DataValue> getvalueData();
+    List<DataValue> getvalueData(Integer dataId);
 
     void addvalueData(DataValue dd);
 

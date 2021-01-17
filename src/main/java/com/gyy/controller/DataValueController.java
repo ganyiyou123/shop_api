@@ -23,8 +23,8 @@ public class DataValueController {
     返回值：   {"code":200,"message":"提示",data:[{*}]}
     */
     @GetMapping("getvalueData")
-    public ReponseData getvalueData(){
-        List<DataValue> dlist= ds.getvalueData();
+    public ReponseData getvalueData(Integer dataId){
+        List<DataValue> dlist= ds.getvalueData(dataId);
         return  ReponseData.success(dlist);
     }
 

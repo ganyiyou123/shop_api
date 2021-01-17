@@ -14,8 +14,8 @@ public class DataValueServiceImpl implements DataValueService {
     private DataValueDao dao;
 
     @Override
-    public List<DataValue> getvalueData() {
-        return dao.getvalueData();
+    public List<DataValue> getvalueData(Integer dataId) {
+        return dao.getvalueData(dataId);
     }
 
     @Override

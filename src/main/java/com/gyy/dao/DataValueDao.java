@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface DataValueDao {
     @Select("select * from  shop_datavalue where dataId=#{dataId} and isDel=1" )
-    List<DataValue> getvalueData();
+    List<DataValue> getvalueData(Integer dataId);
 
     @Insert("insert into shop_datavalue (name,nameCH,dataId,isDel) value (#{name},#{nameCH},#{dataId},#{isDel})")
     void addvalueData(DataValue dd);
