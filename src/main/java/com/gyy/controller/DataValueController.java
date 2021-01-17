@@ -67,4 +67,19 @@ public class DataValueController {
         return ReponseData.success(null);
     }
 
+
+    /*
+    作用：删除
+    路径：  http://192.168.1.101:8080/api/datavalue/delvalueData
+    请求：post请求
+    参数：id
+    返回值：   null
+    */
+
+    @PostMapping("delvalueData")
+    public ReponseData delvalueData(Integer id){
+        ds.delvalueData(id);
+        return ReponseData.success(null);
+    }
+
 }

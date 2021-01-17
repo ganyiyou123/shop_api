@@ -12,4 +12,6 @@ public interface DataValueService {
     DataValue upShowvalueData(Integer id);
 
     void upvalueData(DataValue da);
+
+    void delvalueData(Integer id);
 }

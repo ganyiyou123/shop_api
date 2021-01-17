@@ -1,6 +1,7 @@
 package com.gyy.dao;
 
 import com.gyy.entity.po.DataValue;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
@@ -19,4 +20,8 @@ public interface DataValueDao {
 
     @Update("update shop_datavalue set name=#{name},nameCH=#{nameCH} where id=#{id}")
     void upvalueData(DataValue da);
+
+
+    @Delete("delete from shop_datavalue where id=#{id}")
+    void delvalueData(Integer id);
 }
