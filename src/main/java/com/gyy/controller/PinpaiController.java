@@ -5,13 +5,16 @@ import com.gyy.entity.vo.PinpaiParams;
 import com.gyy.entity.vo.ReponseData;
 import com.gyy.service.PinpaiService;
 import com.gyy.util.FileSaveUtils;
+import com.gyy.util.OssFileUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
+
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("api/pinpai/")
@@ -60,10 +63,13 @@ public class PinpaiController {
      * 返回值为：localhost:8080+图片路劲
      * */
     @PostMapping("uploadFile")
-    public ReponseData uploadFile(MultipartFile file, HttpServletRequest request) {
-        //将文件保存到指定的服务器目录下
-        String saveFile = FileSaveUtils.saveFile(file, "files", request);
-        return ReponseData.success("localhost:8080"+saveFile);
+    public ReponseData uploadFile(MultipartFile file) throws IOException {
+
+
+        String originalFilename = file.getOriginalFilename();
+        String newName = UUID.randomUUID().toString() + originalFilename.substring(originalFilename.lastIndexOf("."));
+        newName="imgs/"+newName;
+        return ReponseData.success(OssFileUtils.upFile(file.getInputStream(),newName));
     }
 
     /*
