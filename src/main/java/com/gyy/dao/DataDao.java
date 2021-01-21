@@ -28,4 +28,7 @@ public interface DataDao {
 
     @Update("update shop_data set isDel=2 where id=#{id}")
     void dleDatasByid(Integer id);
+
+    @Select("select * from shop_data where typeId=#{typeId}")
+    List<Data> queryDatasBytypeId(Integer typeId);
 }

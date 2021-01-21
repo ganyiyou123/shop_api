@@ -7,6 +7,7 @@ import com.gyy.service.DataService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -15,6 +16,22 @@ import java.util.Map;
 public class DataController {
     @Resource
     private DataService ds;
+
+    /*
+     * 查询
+     * 路径为：api/data/queryDatasBytypeId
+     * 请求方式为：get
+     * 请求参数为：typeId
+     * 返回值为：{"code":200,"message":"提示",data:[{*}]}
+     * */
+    @GetMapping("queryDatasBytypeId")
+    public  ReponseData queryDatasBytypeId(Integer typeId){
+        List<Data> ddlist=ds.queryDatasBytypeId( typeId);
+        return  ReponseData.success(ddlist);
+    }
+
+
+
 
     /*
      * 查询

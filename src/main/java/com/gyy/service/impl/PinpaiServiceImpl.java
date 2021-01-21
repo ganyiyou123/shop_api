@@ -52,5 +52,10 @@ public class PinpaiServiceImpl implements PinpaiService {
         dao.delDatasByid(id);
     }
 
+    @Override
+    public List<Pinpai> getDatas() {
+        return dao.getDatas();
+    }
+
 
 }

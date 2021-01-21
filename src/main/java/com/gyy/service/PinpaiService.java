@@ -18,4 +18,6 @@ public interface PinpaiService {
 
 
     void delDatasByid(Integer id);
+
+    List<Pinpai> getDatas();
 }

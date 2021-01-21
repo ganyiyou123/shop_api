@@ -24,6 +24,20 @@ public class PinpaiController {
     private PinpaiService ps;
 
     /*
+    作用：查询所有的分类数据
+    路径：  http://192.168.1.101:8080/api/pinpai/getDatas
+    请求：get请求
+    参数：null
+    返回值：   {"code":200,"message":"提示",data:[{*}]}
+    */
+
+    @GetMapping("getDatas")
+    public ReponseData getDatas(){
+        List<Pinpai> plist=ps.getDatas();
+        return  ReponseData.success(plist);
+    }
+
+    /*
      * 查询
      * 路径为：api/pinpai/queryDatas
      * 请求方式为：get

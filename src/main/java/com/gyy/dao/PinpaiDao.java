@@ -30,4 +30,7 @@ public interface PinpaiDao {
 
     @Update("update shop_pinpai set isDel=2 where id=#{id}")
     void delDatasByid(Integer id);
+
+    @Select("select * from shop_pinpai")
+    List<Pinpai> getDatas();
 }

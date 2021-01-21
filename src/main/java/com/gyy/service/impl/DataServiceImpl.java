@@ -49,4 +49,9 @@ public class DataServiceImpl implements DataService {
     public void dleDatasByid(Integer id) {
         dao.dleDatasByid(id);
     }
+
+    @Override
+    public List<Data> queryDatasBytypeId(Integer typeId) {
+        return dao.queryDatasBytypeId( typeId);
+    }
 }
