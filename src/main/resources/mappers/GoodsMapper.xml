@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gyy.dao.GoodsDao">
+
+    <select id="getcount" parameterType="com.gyy.entity.vo.PinpaiParams" resultType="java.lang.Integer">
+      select count(*) from shop_goods where isDel=1
+
+      <if test="name!=null and name!=''">
+          and name like "%"#{name}"%"
+      </if>
+
+    </select>
+
+    <select id="getGoods" parameterType="com.gyy.entity.vo.PinpaiParams" resultType="com.gyy.entity.po.Goods">
+        select * from shop_goods
+        where isDel=1
+
+        <if test="name!=null and name!=''">
+            and name like "%"#{name}"%"
+        </if>
+
+        order by id desc
+
+        limit ${size*(currPage-1)},#{size}
+
+    </select>
+</mapper>

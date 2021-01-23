@@ -6,6 +6,7 @@ import com.gyy.dao.GoodsDao;
 import com.gyy.dao.GoodsDatasDao;
 import com.gyy.entity.po.Goods;
 import com.gyy.entity.po.GoodsDatas;
+import com.gyy.entity.vo.PinpaiParams;
 import com.gyy.service.GoodsService;
 
 
@@ -14,9 +15,7 @@ import com.gyy.service.GoodsService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @Service
 public class GoodsServiceImpl implements GoodsService {
@@ -85,4 +84,23 @@ public class GoodsServiceImpl implements GoodsService {
     public void deleteGoods(Integer id) {
         dao.deleteGoods(id);
     }
+
+    //查询
+    @Override
+    public Map getGoods(PinpaiParams params) {
+        Map rs=new HashMap();
+        Integer count=dao.getcount(params);
+        rs.put("count",count);
+        List<Goods> glist=dao.getGoods(params);
+        rs.put("glist",glist);
+        return rs;
+    }
+
+    //商品属性值回显
+    @Override
+    public List<GoodsDatas> upShowgoodsDatas(Integer goodsId) {
+        return gdao.upShowgoodsDatas(goodsId);
+    }
+
+
 }
